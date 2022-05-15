@@ -1,4 +1,4 @@
-CREATE TABLE OrderListing (
+CREATE TABLE IF NOT EXISTS OrderListing (
   "hash"            TEXT NOT NULL,
   "data"            TEXT NOT NULL,
   "signature"       TEXT NOT NULL,
@@ -6,6 +6,6 @@ CREATE TABLE OrderListing (
   "token"           TEXT NOT NULL,
   "tokenId"         TEXT NOT NULL,
   "price"           TEXT NOT NULL,
-  "paymentToken"    TEXT,
+  "paymentToken"    TEXT NOT NULL,
   PRIMARY KEY ("hash")
 );
