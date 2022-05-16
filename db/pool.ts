@@ -4,5 +4,5 @@ const DATABASE_URL = process.env.DATABASE_URL || "postgresql://mpdemo:mysecretpa
 
 export const pool = new Pool({
   connectionString: DATABASE_URL,
-  // ssl: {rejectUnauthorized: false}
+  // ssl: {rejectUnauthorized: false},
 });

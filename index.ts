@@ -1,6 +1,8 @@
 import express from "express";
+import cors from "cors";
 import orders from "./routes/orders";
 import initdb from "./db/initdb";
+import * as path from "path";
 
 const port = process.env.PORT || 8080;
 
@@ -9,9 +11,13 @@ const port = process.env.PORT || 8080;
   await initdb();
 
   express()
-    .use("/", express.static("public"))
+    // .use(cors())
     .use(express.json())
+    .use("/", express.static(path.join(__dirname, "public")))
     .use("/api/orders", orders)
+    .get("*", (req, res) => {
+      res.sendFile(path.join(__dirname, "public", "index.html"));
+    })
     .listen(port, () => {
       console.log("server started at port " + port);
     });

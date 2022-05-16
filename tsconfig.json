@@ -5,7 +5,7 @@
     "sourceMap": false,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "outDir": "../mp-heroku/dist"
+    "outDir": "build"
   },
   "exclude": [
     "node_modules"
